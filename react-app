@@ -1,0 +1,30 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Faker from 'faker';
+import CommentDetail from "./CommentDetail";
+import ApprovalCard from "./ApprovalCard";
+
+const App = () => {
+    return(
+        <div className="ui container comments">
+            <ApprovalCard></ApprovalCard>
+            <CommentDetail author = "Marko"
+                           timeAgo = "Two days ago"
+                           commentText = "Nice comment"
+                           avatar = {Faker.image.avatar()}
+            />
+            <CommentDetail author = 'Misko'
+                           timeAgo = "Three days ago"
+                           commentText = "Nice dip"
+                           avatar = {Faker.image.avatar()}
+            />
+            <CommentDetail author = 'Mona'
+                           timeAgo = "Today at 6 pm"
+                           commentText = "No comment"
+                           avatar = {Faker.image.avatar()}
+            />
+        </div>
+
+    )
+};
+ReactDOM.render(<App/>, document.querySelector('#root'))
